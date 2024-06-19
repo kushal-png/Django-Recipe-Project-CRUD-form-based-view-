@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 {% block start %}
   <div class="container">
+    <!-- Seerch bar -->
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-6">
+        <form class="p-2 border rounded shadow d-flex border-black ">
+          <input class="form-control me-3 border-1" type="search" placeholder="Search" aria-label="Search" name="search" />
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <hr />
+    <!-- Receipe list -->
     <div class="table-responsive">
-      <h2 class="mt-4 mb-3">recipe List</h2>
+      <h2 class="mt-4 mb-3">Recipe List</h2>
       <table class="table table-striped table-bordered">
         <thead class="table-dark">
           <tr>
