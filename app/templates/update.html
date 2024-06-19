@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block start %}
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-6">
+      <form class="p-4 border rounded shadow" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Update recipe</h2>
+        <hr />
+        <div class="form-group mb-3">
+          <label for="recipeName" class="form-label">Recipe Name</label>
+          <input type="text" class="form-control" id="recipeName" aria-describedby="emailHelp" placeholder="Enter recipe name" name="ftitle" value="{{ recipes.title }}" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="recipeDescription" class="form-label">Recipe Description</label>
+          <textarea class="form-control" id="recipeDescription" rows="3" placeholder="Recipe description" name="fdescription">{{ recipes.description }}</textarea>
+        </div>
+        <div class="form-group mb-3">
+          <label for="recipeImage" class="form-label">Recipe Image</label>
+          <input type="file" class="form-control" id="recipeImage" name="fimage" />
+          {% if recipes.image %}
+            <div class="mt-2">
+              <img src="{{ recipes.image.url }}" alt="Current image" class="img-thumbnail" style="height: 100px; width: 100px;" />
+            </div>
+          {% endif %}
+        </div>
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
