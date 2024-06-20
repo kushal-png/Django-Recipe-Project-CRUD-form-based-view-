@@ -26,7 +26,11 @@ urlpatterns = [
     path('show/', views.show),
     path('recipe/', views.recipe),
     path('delete/<int:id>', views.destroy),
-    path('update/<int:id>', views.update)
+    path('update/<int:id>', views.update),
+    path('login/', views.login_page),
+    path('register/', views.register_page),
+    path('logout/', views.logout_page),
+    path('practice/', views.practice)
 ]
 
 if settings.DEBUG:
